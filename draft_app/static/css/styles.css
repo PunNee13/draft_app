@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: space-around;
+    resize: both;
+}
+
+#acn-logo-main {
+    width: 300px;
+}
+
+.paragraph {
+    width: 700px;
+    text-align:justify;
+    word-spacing:-2px;
+    line-height: 1.6;
+      }
+      

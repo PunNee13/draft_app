@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="text_polishing" style="text-align:center;"></div>
+    <h2>
+        <a href="/" >HOME</a>
+        <a href="/run" >RUN</a>
+    </h2>
+    <h2>Text Prompt</h2>
+    <form action="{{ url_for('submit') }}" method="post">
+
+        <label for="context">Choose the context :</label> <select name="text_polishing_context" id="text_polishing_context">
+          <option value="" >{{text_polishing_context}}</option>
+          <option value="Enhance the text by fixing spelling and grammar mistakes while keeping the content intact:">Enhance the text by fixing spelling and grammar mistakes while keeping the content intact:</option>
+          <option value="Translate following text to German:">Translate following text to German:</option>
+          <option value="Give heading to following text:">Give heading to following text:</option>
+          <option value="Rewrite the given Letter to imbue it with a formal tone and impactful language:">Rewrite the given Letter to imbue it with a formal tone and impactful language:</option>
+        </select>
+        <br>
+        <br>
+        <label for="TextPolishing_request">Request</label>
+        <br>
+        <textarea id="text_polishing_input" name="text_polishing_input" rows="10" cols="100">{{text_polishing_input}} </textarea>
+        <br>
+        <input type="submit">
+        <br>
+    </form>
+    <form action="{{ url_for('reset') }}" method="post">
+        <br>
+        <label for="TextPolishing_response">Response</label>        
+        <br>
+        <textarea id="text_polishing_display" name="text_polishing_display" rows="10" cols="100" readonly>{{text_polishing_output}}</textarea>
+        <br>        
+        <input type="submit" value="Reset">    
+    </form>    
+</div>
+{% endblock %}
